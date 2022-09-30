@@ -88,3 +88,33 @@ Probamos la función ``member``
 Lo ejecutamos:
 
 .. command-output:: racket cap1/03-member.rkt
+
+Definiciones, asignaciones y variables
+--------------------------------------------------------------------------------
+
+Las variables se definen con ``define`` : por ejemplo ``(define a 1234)`` define la variable **a** y le asigna el valor 1234. Se dice que ``define`` **vincula** el valor 1234 a la variable **a** . Se pueden hacer varias definiciones a la vez con ``define-values`` como ``(define-values (x y z) (values 1 2 3))``. Una variable ya definida se puede cambiar con ``(set! variable nuevovalor)`` 
+
+Símbolos, identificadores y palabras clave
+--------------------------------------------------------------------------------
+
+Un símbolo es solo un identicador con el quote, por ejemplo ``'simbolo``. Se parecen un poco a las enumeraciones. Una palabra clave es un texto que lleva delante ``#:``. Se utilizan sobre todo en funciones con parámetros opcionales
+
+Igualdad e identidad
+--------------------------------------------------------------------------------
+
+Dos variables son iguales si se han definido en sitios distintos y contienen los mismos valores. Dos variables son idénticas si apuntan al mismo sitio.
+
+1. La igualdad se comprueba con ``(equal? a b)`` .
+2. La identidad con ``(eq? a b)``.
+
+
+Cadenas
+--------------------------------------------------------------------------------
+
+Los carácteres se escriben así: ``#\A``. Se pueden usar Unicodes con ``#\u0041``. Algunas funciones útiles son:
+
+* (char->integer #\Z)
+* (integer->char 65)
+* (char-alphabetic? \#k)
+* (char-numeric? \#3)
+

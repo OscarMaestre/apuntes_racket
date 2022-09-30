@@ -47,7 +47,7 @@ Ocurre entonces que las s-expresiones forman *árboles binarios*.
 Acceso a elementos de lista
 --------------------------------------------------------------------------------
 
-Se puede acceder a elementos de una lista con ``first`` , ``second`` , ``third`` , y así ``tenth`` . Se puede acceder a cualquier elemento con ``(list-ref <lista> posicion)``
+Se puede acceder a elementos de una lista con ``first`` , ``second`` , ``third`` , y así ``tenth`` . Se puede acceder a cualquier elemento con ``(list-ref <lista> posicion))``
 
 
 .. literalinclude:: 01-listas.rkt
@@ -56,5 +56,35 @@ Se puede acceder a elementos de una lista con ``first`` , ``second`` , ``third``
 Lo ejecutamos:
 
 .. command-output:: racket cap1/01-listas.rkt
-   :ellipsis: 2
 
+Probamos la extracción de elementos de una lista
+
+.. literalinclude:: 02-list-ref.rkt
+   :language: racket
+
+Lo ejecutamos:
+
+.. command-output:: racket cap1/02-list-ref.rkt
+
+Algunas funciones útiles
+--------------------------------------------------------------------------------
+
+* ``(length lista)`` devuelve la longitud de la lista.
+* ``(reverse lista)`` invierte la lista.
+* ``(sort lista <)`` ordena la de menor a mayor.
+* ``(append lista1 lista2 ... listan)`` une dos o más listas.
+* ``(range inicio salto fin)`` crea una lista de inicio a fin con incremento de salto.
+* ``(range 10)`` crea una lista de 0 a 9.
+* ``(make-list numveces atomo)`` repite el átomo *numveces*.
+* ``(null? lista)`` devuelve **#t** o **#f** si la lista es vacía o no.
+* ``(member elemento lista)`` devuelve la cola de la lista empezando por *elemento*. Si no está devuelve **#f** 
+
+
+Probamos la función ``member`` 
+
+.. literalinclude:: 03-member.rkt
+   :language: racket
+
+Lo ejecutamos:
+
+.. command-output:: racket cap1/03-member.rkt

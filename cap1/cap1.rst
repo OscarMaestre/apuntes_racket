@@ -118,3 +118,59 @@ Los carácteres se escriben así: ``#\A``. Se pueden usar Unicodes con ``#\u0041
 * (char-alphabetic? \#k)
 * (char-numeric? \#3)
 
+Las cadenas van entre comillas dobles. Se pueden poner Unicodes con "\u263A". Para concatenar cadenas usamos ``(string-append cad1 cad2)`` . Para acceder a un caracter de una cadena se usa ``(string-ref "Hola mundo")`` . Las cadenas son inmutables, pero se pueden crear cadenas mutables con ``(string )`` y con ``(string-copy cadena)`` . Otras funciones útiles son:
+
+* ``(string-length cadena)`` que devuelve la longitud de una cadena.
+* ``(substring cadena 7 12)`` devuelve la subcadena entre las posiciones 7 y 12.
+* ``(string-upcase cadena)`` y ``(string-downcase cadena)`` pasan la cadena a mayúsculas o a minúsculas.
+* ``(string<=? cad1 cad)`` nos dice si **cad1** va antes que **cad2** . Para ver si son iguales o va despues usamos ``(string=? cad1 cad2)`` y ``(string>=? cad1 cad2)`` .
+* ``(string-replace cadena trozoanterior trozoposterior)`` reemplaza dentro de **cadena** la subcadena **trozoanterior** por la cadena **trozoposterior** .
+* ``(string-contains? cadena subcadena)`` nos dice si la subcadena está dentro de la cadena.
+* ``(string-split cadena tokenopcional)`` divide la cadena en trozos. Si no se da un token se parte usando el espacio.
+* ``(string-trim cadena)`` elimina los espacios en blanco extras que pudiera haber por los lados.
+
+Hay otras funciones más propias de Racket:
+
+* ``(symbol->string 'FBI)`` convierte el símbolo en una cadena.
+* ``(string->symbol "FBI")`` convierte la cadena en un símbolo.
+* ``(string->list cadena)`` convierte la cadena en una lista.
+* ``(list->string lista)`` convierte la lista en una cadena.
+* ``(keyword->string #:palabraclave)`` convierte una palabra clave en una cadena.
+* ``(format "let ~a = ~a" "x" "2")`` construye una cadena reemplazando los **~a** por los argumentos.  
+* ``(string->number cadena)`` y ``(number->string numero)`` convierten entre números y cadenas respectivamente.
+
+
+Vectores
+--------------------------------------------------------------------------------
+
+Son como en otros lenguajes de programación: secuenciales (las listas tienen más bien forma de *árbol*). Se pueden construir con ``(vector 2 "a" 3)`` (que sí evalúa sus argumentos) o con ``#(2 "a" 3)`` (que no los evalúa y además construye un *vector inmutable* )
+
+* Se puede acceder a un elemento de un vector con ``(vector-ref v pos)``.
+* Se puede modificar un elemento con ``(vector-set! v pos nuevovalor)`` .
+
+En realidad, los vectores son más rápidos que las listas, pero menos versátiles. Algunas funciones útiles:
+
+* ``(vector-length v)`` devuelve la longitud de un vector.
+* ``(vector-sort v <)`` ordena de menor a mayor.
+* ``(vector->list v)`` convierte v en una lista.
+* ``(make-vector 10 "abc")`` crea un vector de 10 cadenas "abc" **que además es mutable.** 
+* ``(vector-append v1 v2)`` concatena dos vectores.
+* ``(vector-member "elemento" v)`` comprueba si "elemento" está en el vector **v.** 
+
+Estructuras
+--------------------------------------------------------------------------------
+
+Son como los ``structs`` en C. Todo **struct** recibe automáticamente algunas funciones. El siguiente programa las ilustra:
+
+
+Probamos la función ``member`` 
+
+.. literalinclude:: 04-estructura.rkt
+   :language: racket
+
+Lo ejecutamos:
+
+.. command-output:: racket cap1/04-estructura.rkt
+
+
+

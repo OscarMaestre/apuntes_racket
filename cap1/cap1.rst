@@ -47,7 +47,7 @@ Ocurre entonces que las s-expresiones forman *árboles binarios*.
 Acceso a elementos de lista
 --------------------------------------------------------------------------------
 
-Se puede acceder a elementos de una lista con ``first`` , ``second`` , ``third`` , y así ``tenth`` . Se puede acceder a cualquier elemento con ``(list-ref <lista> posicion))``
+Se puede acceder a elementos de una lista con ``first`` , ``second`` , ``third`` ... ``tenth`` . Se puede acceder a cualquier elemento con ``(list-ref <lista> posicion))``
 
 
 .. literalinclude:: 01-listas.rkt
@@ -174,3 +174,27 @@ Lo ejecutamos:
 
 
 
+Por defecto,  los campos son inmutables, pero pueden hacerse mutables los campos que deseemos con **#:mutable**. También se puede hacer que la estructura sea "imprimible" usando **#:transparent**. 
+
+Un parámetro interesante es **#:guard**. Se le puede pasar una función que aceptará los valores de la estructura y en ella podremos programar comprobaciones para dichos valores.
+
+
+Controlando la salida
+--------------------------------------------------------------------------------
+
+Se pueden usar tres posibilidades: ``write``, ``display`` y ``print`` (con variantes terminadas en ``ln`` como ``println`` que añaden un fin de línea).
+
+``write`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Genera salidas que puedan usarse como entradas para otras funciones.
+
+``display`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Similar a write, pero sin controlar que la entrada sirva para otras funciones (por ejemplo, no se incluyen las comillas).
+
+``print`` 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Añade más formato que write

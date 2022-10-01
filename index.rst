@@ -12,6 +12,8 @@ Welcome to Apuntes Racket's documentation!
 
 
    cap1/cap1
+   cap2/cap2
+   cap3/cap3
 
 Indices and tables
 ==================

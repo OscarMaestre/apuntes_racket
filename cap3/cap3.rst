@@ -26,4 +26,19 @@ Que asigna a "duplicar" una función que toma un valor y lo duplica. En realidad
 Funciones de orden superior
 --------------------------------------------------------------------------------
 
-Son funciones que aceptan otras funciones como parámetros.
+Son funciones que aceptan otras funciones como parámetros. Las más comunes son estas:
+
+* **(map funcion lista)** aplica la función a los elementos de una lista y devuelve una lista.
+* **(apply funcion lista)** aplica la función a los elementos de una lista de forma que devuelve un valor.
+
+
+
+El siguiente programa muestra el funcionamiento de estas funciones.
+
+.. literalinclude:: 02-funciones.rkt
+   :language: racket
+
+Lo ejecutamos:
+
+.. command-output:: racket cap3/02-funciones.rkt
+

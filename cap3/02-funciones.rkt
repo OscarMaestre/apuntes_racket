@@ -16,3 +16,11 @@
 ;a toda la lista podemos sumarla entera 
 (display "La suma total de elementos es:")
 (apply + listanumeros)
+
+
+;Definimos una funcion que nos dice si 
+;un elemento es mayor de 3
+(define mayor-de-3? (lambda (x) (> x 3)) )
+;Y filtramos para obtener todos los
+;que valen 4 o más
+(filter mayor-de-3? listanumeros)

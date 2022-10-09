@@ -46,9 +46,37 @@ Lo ejecutamos:
 .. command-output:: racket cap3/02-funciones.rkt
 
 Ámbito léxico
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------------------------------------
+
+
 
 Los identificadores y variables definidos son válidos dentro de su ámbito. Existe un ámbito global, pero debe manejarse con cuidado. Hay dos formas de definir:
 
 **let** que define una variable que estará disponible justo despues del **let** .
 **let*** que permite que una definición esté disponible para otra definición *incluso dentro del propio let* 
+
+A continuación un ejemplo de **let** y **cond.** 
+
+.. literalinclude:: 03-let-y-cond.rkt
+   :language: racket
+
+Lo ejecutamos:
+
+.. command-output:: racket cap3/03-let-y-cond.rkt
+
+Bucles
+--------------------------------------------------------------------------------
+
+
+
+En Racket existe un **do** que funciona de manera similar a un for.
+
+A continuación una función que suma los n primeros números y que muestra como funciona.
+
+.. literalinclude:: 04-do.rkt
+   :language: racket
+
+Lo ejecutamos:
+
+.. command-output:: racket cap3/04-do.rkt
+
